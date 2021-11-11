@@ -27,4 +27,9 @@ public class ComicsService {
     public Comics findById(Long id){
         return comicsRepository.findById(id);
     }
+
+    public void saveNewComics(String title, String author, int creationYear, double price){
+        Comics comics = new Comics(null,title,author,creationYear,price);
+        comicsRepository.save(comics);
+    }
 }

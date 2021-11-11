@@ -30,4 +30,8 @@ public class ComicsRepository {
         }
         throw new ResourseNotFoundException();
     }
+    public void save(Comics newComics){
+        newComics.setId(comics.stream().mapToLong(Comics :: getId).max().getAsLong() + 1);
+        comics.add(newComics);
+    }
 }

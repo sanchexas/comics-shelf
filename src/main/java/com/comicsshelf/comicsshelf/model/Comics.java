@@ -20,6 +20,17 @@ public class Comics {
         this.creationYear = creationYear;
         this.price = price;
     }
+    public Comics(String title, double price){
+        this.title = title;
+        this.price = price;
+    }
+
+    public Comics(Long id, String author, double price) {
+        this.id = id;
+        this.author = author;
+        this.price = price;
+    }
+
 
     public Long getId() {
         return id;
