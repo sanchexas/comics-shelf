@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание Пользователя</title>
+</head>
+<body>
+<h1>Введите числа для выситания: </h1>
+<form method="post" th:action="@{/create_new_user}">
+    <input type="number" name="id">
+    <input type="text" name="name">
+    <input type="number" name="age">
+    <button class="create_user" type="submit">Создать Пользователя</button>
+
+</form>
+</body>
+</html>

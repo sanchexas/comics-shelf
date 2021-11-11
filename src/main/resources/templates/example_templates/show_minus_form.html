@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Minus Form</title>
+</head>
+<body>
+  <h1>Введите числа для выситания: </h1>
+  <form method="get" th:action="@{/minus}">
+    <input name="first">
+    <input name="second">
+    <button class="minusbtn" type="submit">Minus</button>
+
+  </form>
+</body>
+</html>

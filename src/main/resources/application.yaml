@@ -1,0 +1,4 @@
+server:
+  port: 3127
+  servlet:
+    context-path: /comicsshelf
