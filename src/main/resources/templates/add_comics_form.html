@@ -6,7 +6,11 @@
 </head>
 <body>
 <form method="post" th:action="@{/add_comics}">
-  <input>
+  <input type="text" name="title">
+  <input type="text" name="author">
+  <input type="number" name="creationYear">
+  <input type="number" name="price">
+  <button type="submit">Добавить</button>
 
 </form>
 </body>
