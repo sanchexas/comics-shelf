@@ -1,35 +1,28 @@
 package com.comicsshelf.comicsshelf.model;
 
-import java.math.BigDecimal;
+import javax.persistence.*;
 
+
+@Entity
+@Table(name = "comics")
 public class Comics {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "author")
     private String author;
+
+    @Column(name = "creation_year")
     private int creationYear;
+
+    @Column(name = "price")
     private double price;
-
-    public Comics(){
-
-    }
-
-    public Comics(Long id, String title, String author, int creationYear, double price) {
-        this.id = id;
-        this.title = title;
-        this.author = author;
-        this.creationYear = creationYear;
-        this.price = price;
-    }
-    public Comics(String title, double price){
-        this.title = title;
-        this.price = price;
-    }
-
-    public Comics(Long id, String author, double price) {
-        this.id = id;
-        this.author = author;
-        this.price = price;
-    }
 
 
     public Long getId() {

@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>По запросу Все комиксы:</h1>
-<table>
+<table class="table">
     <thead>
     <tr>
         <td>ID</td>
@@ -18,11 +18,13 @@
     </thead>
     <tbody>
     <tr th:each="c : ${comics}">
+
         <td th:text="${c.id}"></td>
         <td th:text="${c.title}"></td>
         <td th:text="${c.author}"></td>
         <td th:text="${c.creationYear}"></td>
         <td th:text="${c.price}"></td>
+
     </tr>
     </tbody>
 </table>

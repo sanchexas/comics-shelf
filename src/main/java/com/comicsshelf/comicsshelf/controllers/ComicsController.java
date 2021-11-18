@@ -16,7 +16,7 @@ public class ComicsController {
         this.comicsService = comicsService;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public String showMainPage(Model model){
         model.addAttribute("comics", comicsService.findAll());
         return "index";
