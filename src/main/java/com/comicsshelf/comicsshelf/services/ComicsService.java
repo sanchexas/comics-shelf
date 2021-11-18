@@ -9,11 +9,7 @@ import java.util.List;
 
 @Service
 public class ComicsService {
-    private ComicsRepository comicsRepository;
-
-    // обращение к репозиторию, т.к. бд пока что нет. Но только
-    //репозиторий может иметь доступ к бд ИЛИ как в нашем случае хранить данные на прямую ВНУТРИ СЕБЯ.
-    //Поэтому создаем объект репозитория и обращаемся к данным, которые он хранит.
+    private final ComicsRepository comicsRepository;
 
     @Autowired
     public ComicsService(ComicsRepository comicsRepository) {
@@ -21,15 +17,23 @@ public class ComicsService {
     }
 
     public List<Comics> findAll(){
-        return comicsRepository.findAllComics();
+        return comicsRepository.findAll();
     }
 
     public Comics findById(Long id){
-        return comicsRepository.findById(id);
+        return comicsRepository.findById(id).get();
     }
 
     public void saveNewComics(String title, String author, int creationYear, double price){
-        Comics comics = new Comics(null,title,author,creationYear,price);
+        Comics comics = new Comics();
+        comics.setTitle(title);
+        comics.setAuthor(author);
+        comics.setCreationYear(creationYear);
+        comics.setPrice(price);
+
+        if (comics.getPrice() <= 0){
+            return;
+        }
         comicsRepository.save(comics);
     }
 }
