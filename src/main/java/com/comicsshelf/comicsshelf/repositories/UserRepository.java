@@ -14,14 +14,8 @@ import java.util.List;
 public class UserRepository {
     private List<User> userList;
 
-    @PostConstruct
-    public void standard(){
-        userList = new ArrayList<>(Arrays.asList(
-           new User(1L,"MyLittlePony", 20),
-           new User(2L,"Alexandr", 18),
-           new User(3L,"Sanches", 19)
-        ));
-    }
+
+
     public List<User> findAllUsers(){
         return Collections.unmodifiableList(userList);
     }
